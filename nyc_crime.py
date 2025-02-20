@@ -62,6 +62,7 @@ plt.xlabel('Borough')
 plt.ylabel('Total Crime Count')
 plt.xticks(rotation=45)
 plt.tight_layout()
+plt.savefig('crime_distribution_barchart.png')
 plt.show()
 
 # Visualization 2: Stacked bar chart that compares different crime types by borough
@@ -76,7 +77,9 @@ plt.xlabel('Borough')
 plt.ylabel('Number of Crimes')
 plt.legend(title='Crime Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
+plt.savefig('crime_types_stacked.png')
 plt.show()
+
 
 # Visualization 3: Scatter plot analyzing relationship between park size and crime count
 plt.figure(figsize=(12, 6))
@@ -86,4 +89,5 @@ plt.xlabel('Park Size (Acres)')
 plt.ylabel('Total Crime Count')
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
+plt.savefig('parksize_vs_crime.png')
 plt.show()
