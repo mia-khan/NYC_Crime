@@ -50,21 +50,19 @@
         });
       </script>
 
-      <button id="ourDataButtom" class="buttonEmphasis">This is: Our Data 📊</button>
-      <!--
+      <button id="ourDataButtom">Our Data 📊</button>
       <script>
         const ourDataButtom = document.getElementById("ourDataButtom");
         ourDataButtom.addEventListener("click", function () {
-          window.location.href = "popularity.html";
+          window.location.href = "ourdata.html";
         });
       </script>
-      -->
 
-      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <button id="sVisualizationsButton" class="buttonEmphasis">This is: Static Visualizations 🖼️</button>
       <script>
         const sVisualizationsButton = document.getElementById("sVisualizationsButton");
         sVisualizationsButton.addEventListener("click", function () {
-          window.location.href = "staticVisualizations.html";
+          window.location.href = "popularity.html";
         });
       </script>
 
@@ -88,8 +86,12 @@
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-    <!-- Section 1: Popularity -->
-    <h2 class="secondary" id="Popularity">Our Data, Its Origin, Its Significance</h2>
+    <!-- Section 1: Crime Distribution by Borough -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Bar Chart</p>
+      1. Crime Distribution by Borough
+    </h2>
+    
 
     <div class="grid-container">
       <!-- Column 1 -->
