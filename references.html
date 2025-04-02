@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.freepik.com/256/12861/12861836.png?semt=ais_hybrid"
+    />
+    <title>References</title>
+  </head>
+
+  <body>
+    <!-- Title, using custom font -->
+    <h1 class="title" id="top">
+      <span class="emphasisTitle">Shade or Shady?</span>
+    </h1>
+
+    <!-- Members -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> By: Phuc (John) Nguyen, Nisha Gupta, Mia Khan</span>
+      </p>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Anchor buttons -->
+    <div class="flex-container">
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> Explore: </span>
+      </p>
+
+      <button id="indexButton">Introduction 👋</button>
+      <script>
+        const indexButton = document.getElementById("indexButton");
+        indexButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+
+      <button id="referencesButton" class="buttonEmphasis">This is: References 📚</button>
+
+      <button id="ourDataButtom">Our Data 📊</button>
+      <script>
+        const ourDataButtom = document.getElementById("ourDataButtom");
+        ourDataButtom.addEventListener("click", function () {
+          window.location.href = "ourdata.html";
+        });
+      </script>
+
+      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <script>
+        const sVisualizationsButton = document.getElementById("sVisualizationsButton");
+        sVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="iVisualizationsButton">Interactive Visualizations 👾</button>
+      <script>
+        const iVisualizationsButton = document.getElementById("iVisualizationsButton");
+        iVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="summaryButton">Summary & Findings 🔭</button>
+      <script>
+        const summaryButton = document.getElementById("summaryButton");
+        summaryButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+    </div>
+    
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Section 1: Popularity -->
+    <h2 class="secondary" id="Popularity">References</h2>
+
+    <div class="grid-container">
+      <!-- Column 1 -->
+      <div class="column">
+        <div class="sticky">
+          <p class="columnText">
+              <strong>1. The Impacts of Green Spaces on Crime in New York City</strong><br><br>
+              <em>Matthew Edward Iannone Jr. (2018), Fordham University</em><br><br>
+              This study integrates criminal and environmental psychology to explore how green space influences crime patterns,
+              providing context for our focus on NYC parks.<br><br>
+              <a href="https://research.library.fordham.edu/cgi/viewcontent.cgi?article=1062&context=environ_2015" target="_blank">
+                Read the full paper
+              </a><br><br><br>
+              <strong>2. Gentrification and Violent Crime in New York City</strong><br><br>
+              <em>Michael S. Barton (2014), Crime & Delinquency</em><br><br>
+              This research analyzes how gentrification affects violent crime across NYC neighborhoods, helping inform our 
+              understanding of borough-level differences in crime.<br><br>
+              <a href="https://www.researchgate.net/publication/285802834_Gentrification_and_Violent_Crime_in_New_York_City" target="_blank">
+                Read the full paper
+              </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <img
+          src="https://media.cntravellerme.com/photos/648c35b151562a659243e075/3:2/w_3000,h_2000,c_limit/New%20York%20City_GettyImages-1347979016.jpg"
+          title="New York City from above."
+          alt="New York City from above."
+        />
+        <p class="photoCaption">
+          New York City from above Midtown facing Downtown.
+        </p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="flex-container">
+      <a href="#Top">
+        <button class="buttonEmphasis">Back to Top ↑</button>
+      </a>
+    </div>
+
+    <!-- Final -->
+    <!-- Contact information -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> Questions? Contact us through <a href="mailto:nguyen.phuc1@northeastern.edu">email</a>. </span>
+      </p>
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> A proud DS 4200 project at Northeastern University. </span>
+      </p>
+    </div>
+
+  </body>
+</html>

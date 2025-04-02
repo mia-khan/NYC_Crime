@@ -5,136 +5,237 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="icon"
-      href="https://www.iconarchive.com/download/i109895/lemon-liu/recipes/recipe-soup.ico"
+      href="https://cdn-icons-png.freepik.com/256/12861/12861836.png?semt=ais_hybrid"
     />
     <meta
       name="description"
-      content="Learn about the traditional Vietnamese dish Phở"
+      content="Visualizing Crime Trends & Urban Safety in New York City's Parks"
     />
-    <meta property="og:title" content="Pho - A Traditional Vietnamese Dish" />
+    <meta property="og:title" content="Crime in New York City's Green Pockets" />
     <meta
       property="og:description"
-      content="The history and love for Phở, Vietnam's beloved soup dish"
+      content="Visualizing Crime Trends & Urban Safety in New York City's Parks"
     />
-    <title>All About Phở</title>
+    <title>Shade or Shady: A DS 4200 Project</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
+
 
   <body>
     <!-- Title, using custom font -->
     <h1 class="title" id="top">
-      all about <span class="emphasisTitle">Phở</span>
-      <span class="titleAlt">/[fə̃ː]/</span>
+      <span class="emphasisTitle">Shade or Shady?</span>
+      <span class="subtitle"> Visualizing Crime Trends</span>
+      <span class="subtitle"> & Urban Safety in New York City's Parks</span>
     </h1>
 
-    <!-- Anchor buttons -->
+    <!-- Members -->
     <div class="flex-container">
       <p class="columnText">
-        <span style="color: #d1bda6"> Find out more: </span>
+        <span style="color: #d1bda6"> By: Phuc (John) Nguyen, Nisha Gupta, Mia Khan</span>
+      </p>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Navigation buttons -->
+    <div class="flex-container">
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> Explore: </span>
       </p>
 
-      <button id="navigationButton">Popularity + Recipe 🍲</button>
+      <button id="indexButton" class="buttonEmphasis">This is: Introduction 👋</button>
+
+      <button id="referencesButton">References 📚</button>
       <script>
-        const navigationButton = document.getElementById("navigationButton");
-        navigationButton.addEventListener("click", function () {
-          window.location.href = "popularity.html";
+        const referencesButton = document.getElementById("referencesButton");
+        referencesButton.addEventListener("click", function () {
+          window.location.href = "references.html";
+        });
+      </script>
+
+      <button id="ourDataButtom">Our Data 📊</button>
+      <script>
+        const ourDataButtom = document.getElementById("ourDataButtom");
+        ourDataButtom.addEventListener("click", function () {
+          window.location.href = "ourdata.html";
+        });
+      </script>
+
+      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <script>
+        const sVisualizationsButton = document.getElementById("sVisualizationsButton");
+        sVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+
+      <button id="iVisualizationsButton">Interactive Visualizations 👾</button>
+      <script>
+        const iVisualizationsButton = document.getElementById("iVisualizationsButton");
+        iVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+
+      <button id="summaryButton">Summary & Findings 🔭</button>
+      <script>
+        const summaryButton = document.getElementById("summaryButton");
+        summaryButton.addEventListener("click", function () {
+          window.location.href = "index.html";
         });
       </script>
     </div>
 
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
     <!-- Section 1: Origins -->
-    <h2 class="secondary" id="Home">Introduction to Phở</h2>
+    <h2 class="secondary" id="Home">Introduction to Our Project</h2>
 
     <div class="grid-container">
       <!-- Column 1 -->
       <div class="column">
         <img
-          src="https://preview.redd.it/ph%E1%BB%9F-a-complete-history-of-vietnams-most-renowned-dish-v0-jkw425ncqxnd1.jpg?width=1272&format=pjpg&auto=webp&s=35f75dce0f56650421a83d93888cc7e137b19de4"
-          alt="Patrons enjoying Phở."
-          title="Patrons enjoying Phở."
+          src="https://www.royalcitytours.com/wp-content/uploads/2018/04/architecture-buildings-business-771881.jpg"
+          alt="New York City Skyline"
+          title="New York City Skyline"
         />
-        <p class="photoCaption">Phở being enjoyed on the streets in Vietnam.</p>
+        <p class="photoCaption">New York City at night.</p>
 
         <hr class="reducedOpacity" />
 
         <img
-          src="https://static01.nyt.com/images/2008/02/10/world/10viet-span-600.jpg?quality=75&auto=webp&disable=upscale"
-          alt="Soldier standing in front of Pho Binh."
-          title="Soldier standing in front of Pho Binh."
+          src="https://cdn.britannica.com/71/189171-050-B4A7DA05/Central-Park-New-York-City.jpg"
+          alt="New York City Central Park."
+          title="New York City Central Park."
         />
 
         <p class="photoCaption">
-          A V.C. soldier standing in front of Phở Bình, as reported by the New
-          York Times.
+          One of the world's most famous parks, Central Park, looking out to the city's skyscrapers.
+        </p>
+
+        <hr class="reducedOpacity" />
+
+        <img
+          src="https://media.cnn.com/api/v1/images/stellar/prod/210524225200-02-little-island-ny-0525.jpg?q=w_3000,h_2000,x_0,y_0,c_fill"
+          alt="New York City Little Island."
+          title="New York City Little Island."
+        />
+
+        <p class="photoCaption">
+          One of New York City's newest parks, Little Island, on The Hudson river.
         </p>
       </div>
 
       <!-- Column 2 -->
       <div class="column">
         <div class="sticky">
-          <p class="columnText">
-            Pho is a traditional Vietnamese soup consisting of broth, rice
-            noodles, herbs, and meat. Despite its popularity, its true origins
-            are not definitively recorded, and there are two prevailing theories
-            about its origins. According to the first hypothesis, Phở is
-            believed to have originated in the early 20th century in Northern
-            Vietnam. Trade ships across Asia traveled between the bustling ports
-            of Hanoi, Hai Phong and Nam Dinh, and sailors were commonly offered
-            ngưu nhục phấn, a Chinese noodle soup with buffalo meat. The theory
-            widely believes that locals recreated the dish with their own twists
-            and gave the dish a life of its own.
+          <p class="columnText" style="font-weight: bold;font-style: italic; color:#d1bda6">
+            Overview 🔎
           </p>
 
           <p class="columnText">
-            Instead of Eastern roots, the second emphasizes on Western
-            influences and compares Phở to Pot-au-feu, the French stewed beef,
-            that colonialists introduced. The two dishes share many
-            similarities, including a broth made from cartilaginous, marrow-rich
-            beef bones with flavor provided by grilled onions and ginger.
+            As part of what is arguably the world's greatest city, parks are essential urban pockets that not only give residents valuable recreational opportunities but also serve as the center of the community where safety must be supreme. The project we chose dives into the heavy-hearted 
+            patterns of major felony criminal activity in the city's green spaces, looking at how boroughs, park type, or perhaps even size can affect severity through a diverse series of data visualizations. We believe this is important and timely work. 
+            Robbery, grand larceny, and murder are amongst the group of categories we explore—all categories that can violently derail a person's life and, by extension, the community's well-being. Identifying these critical patterns is the first step in the right direction to make sure that 
+            future policy-making and park design fortify safety for all.
+          </p>
+
+          <p class="columnText" style="font-weight: bold;font-style: italic; color:#d1bda6">
+            Importance 📌
+          </p>
+
+          <p>
+            <ul class="columnText">
+              <li>Urban parks are critical public spaces where residents gather, play, and relax — safety in these areas directly impacts quality of life.</li>
+              <li>Crimes such as robbery, assault, and murder can deeply affect individuals and community trust in public spaces.</li>
+              <li>Understanding crime patterns helps inform better park design and urban planning for safer environments.</li>
+              <li>This work empowers local officials and planners with visual insights to guide data-driven public safety improvements.</li>
+              <li>Visualizing this data makes it accessible not just to policymakers, but also to the public — encouraging engagement and awareness.</li>
+            </ul>
           </p>
 
           <p class="columnText">
-            In the late 20th century, Phở took the spotlight as a Phở
-            restaurant, Phở Bình (Peace Pho), was the site for one of the most
-            monumental conflicts that changed the course of the Vietnam War: The
-            Tết Offensive. The attack was planned and ordered by Northern
-            Vietnam commanders from the upper floors of the shop where
-            downstairs served American miltarymen. Today, Phở Bình is decorated
-            with numerous plaques celebrating its significance. Read more about
-            the history behind Phở Bình on
+            For more detailed information, visit the official 
             <a
-              href="https://www.nytimes.com/2008/02/10/world/asia/web10viet.html"
-              >the New York Times</a
-            >.
-          </p>
-
-          <p class="columnText">
-            For more detailed information, visit the
-            <a
-              href="https://vietnam.travel/things-to-do/history-pho"
+              href="https://www.nycgovparks.org/"
               target="_blank"
-              >history of Pho</a
-            >.
+              >New York City Department of Parks & Recreation</a
+            > website.
           </p>
         </div>
       </div>
     </div>
 
     <!-- Divider for style -->
-    <hr class="reducedOpacity" />
-    
-    <!-- Contact information -->
-    <div class="flex-container">
-      <p class="columnText">
-        <span style="color: #d1bda6"> Questions about Pho? Contact me through <a href="mailto:nguyen.phuc1@northeastern.edu">email</a>! </span>
-      </p>
-    </div>
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-    <!-- Back to Top Button -->
+    <!-- Navigation buttons -->
     <div class="flex-container">
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> Check out next: </span>
+      </p>
+
       <a href="#Top">
         <button class="buttonEmphasis">Back to Top ↑</button>
       </a>
+
+      <button id="referencesButtonBottom">References 📚</button>
+      <script>
+        referencesButtonBottom.addEventListener("click", function () {
+          window.location.href = "references.html";
+        });
+      </script>
+
+      <button id="ourDataButtomBottom">Our Data 📊</button>
+      <script>
+        ourDataButtomBottom.addEventListener("click", function () {
+          window.location.href = "ourdata.html";
+        });
+      </script>
+
+      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <script>
+        sVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+
+      <button id="iVisualizationsButton">Interactive Visualizations 👾</button>
+      <script>
+        iVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+
+      <button id="summaryButton">Summary & Findings 🔭</button>
+      <script>
+        summaryButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
     </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Final -->
+    <!-- Contact information -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> Questions? Contact us through <a href="mailto:nguyen.phuc1@northeastern.edu">email</a>. </span>
+      </p>
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> A proud DS 4200 project at Northeastern University. </span>
+      </p>
+    </div>
+
+
   </body>
 </html>

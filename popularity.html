@@ -12,20 +12,71 @@
   </head>
 
   <body>
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
     <!-- Anchor buttons -->
     <div class="flex-container">
+
       <p class="columnText">
-        <span style="color: #d1bda6"> Navigate: </span>
+        <span style="color: #d1bda6"> Explore </span>
       </p>
 
-      <button id="navigationButton">Home</button>
+      <p class="columnText">
+        <span style="color: #ffffff; font-weight: bold; line-break: auto;"> Shade or Shady?   </span>
+      </p>
+
+      <button id="indexButton">Introduction 👋</button>
       <script>
-        const navigationButton = document.getElementById("navigationButton");
-        navigationButton.addEventListener("click", function () {
+        const indexButton = document.getElementById("indexButton");
+        indexButton.addEventListener("click", function () {
           window.location.href = "index.html";
         });
       </script>
+
+      <button id="referencesButton">References 📚</button>
+      <script>
+        const referencesButton = document.getElementById("referencesButton");
+        referencesButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="ourDataButtom">Our Data 📊</button>
+      <script>
+        const ourDataButtom = document.getElementById("ourDataButtom");
+        ourDataButtom.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <script>
+        const sVisualizationsButton = document.getElementById("sVisualizationsButton");
+        sVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="iVisualizationsButton">Interactive Visualizations 👾</button>
+      <script>
+        const iVisualizationsButton = document.getElementById("iVisualizationsButton");
+        iVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="summaryButton">Summary & Findings 🔭</button>
+      <script>
+        const summaryButton = document.getElementById("summaryButton");
+        summaryButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
     </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
     <!-- Section 1: Popularity -->
     <h2 class="secondary" id="Popularity">1. Why Phở is so Beloved</h2>
@@ -239,5 +290,13 @@
         <button class="buttonEmphasis">Back to Top ↑</button>
       </a>
     </div>
+
+    <!-- Final -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> A proud DS 4200 project at Northeastern University. </span>
+      </p>
+    </div>
+
   </body>
 </html>

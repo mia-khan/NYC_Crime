@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.freepik.com/256/12861/12861836.png?semt=ais_hybrid"
+    />
+    <title>References</title>
+  </head>
+
+  <body>
+    <!-- Title, using custom font -->
+    <h1 class="title" id="top">
+      <span class="emphasisTitle">Shade or Shady?</span>
+    </h1>
+
+    <!-- Members -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> By: Phuc (John) Nguyen, Nisha Gupta, Mia Khan</span>
+      </p>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Anchor buttons -->
+    <div class="flex-container">
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> Explore: </span>
+      </p>
+
+      <button id="indexButton">Introduction 👋</button>
+      <script>
+        const indexButton = document.getElementById("indexButton");
+        indexButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+
+      <button id="referencesButton">References 📚</button>
+      <script>
+        const referencesButton = document.getElementById("referencesButton");
+        referencesButton.addEventListener("click", function () {
+          window.location.href = "references.html";
+        });
+      </script>
+
+      <button id="ourDataButtom" class="buttonEmphasis">This is: Our Data 📊</button>
+      <!--
+      <script>
+        const ourDataButtom = document.getElementById("ourDataButtom");
+        ourDataButtom.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+      -->
+
+      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <script>
+        const sVisualizationsButton = document.getElementById("sVisualizationsButton");
+        sVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="iVisualizationsButton">Interactive Visualizations 👾</button>
+      <script>
+        const iVisualizationsButton = document.getElementById("iVisualizationsButton");
+        iVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+
+      <button id="summaryButton">Summary & Findings 🔭</button>
+      <script>
+        const summaryButton = document.getElementById("summaryButton");
+        summaryButton.addEventListener("click", function () {
+          window.location.href = "popularity.html";
+        });
+      </script>
+    </div>
+    
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Section 1: Popularity -->
+    <h2 class="secondary" id="Popularity">Our Data, Its Origin, Its Significance</h2>
+
+    <div class="grid-container">
+      <!-- Column 1 -->
+      <div class="column">
+        <div class="sticky">
+          <p class="columnText">
+            Our dataset is sourced directly from the <strong>New York Police Department’s official park crime statistics</strong>,
+            covering the last eight quarters (from Q1 2023 through Q4 2024). We combined and cleaned these datasets to create a
+            unified view of crime trends in New York City parks over time.
+          </p>
+
+          <p class="columnText">
+            After merging the quarterly data files, the final dataset contains approximately <strong>9,232 observations</strong>,
+            which far exceeds the minimum requirement for this project. These observations represent reported incidents of
+            seven major felony crime types within NYC parks.
+          </p>
+
+          <h3 class="columnText">Key Features Included</h3>
+          <ul class="columnText">
+            <li><strong>Crime Type:</strong> Murder, rape, robbery, felony assault, burglary, grand larceny, grand larceny of a motor vehicle</li>
+            <li><strong>Park Details:</strong> Name, size, type (category), and borough location</li>
+            <li><strong>Time Frame:</strong> Quarterly breakdown from 2023 to 2024</li>
+            <li><strong>Attributes:</strong> A balanced mix of categorical and continuous variables</li>
+          </ul>
+
+          <p class="columnText">
+            All records were preprocessed to ensure consistency in formatting, remove duplicates, and handle missing values.
+            Categorical fields such as borough and crime type were standardized for clarity in visualizations.
+          </p>
+      
+          <p class="columnText">
+            This cleaned and enriched dataset allows us to explore how crime varies across NYC’s boroughs, types of parks,
+            and time, forming the foundation of our visual analysis and insights.
+          </p>
+
+          <p class="columnText">
+            Access the data from NYPD
+            <a
+              href="https://www.nyc.gov/site/nypd/stats/crime-statistics/park-crime-stats.page"
+              target="_blank"
+              >here</a
+            >.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <img
+          src="https://static.politico.com/b8/6f/f387ac3a454bbe8a92aa6b39fb26/https-delivery-gettyimages.com/downloads/1479418351"
+        />
+        <p class="photoCaption">
+          New York Police Department officers standing by.
+        </p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="flex-container">
+      <a href="#Top">
+        <button class="buttonEmphasis">Back to Top ↑</button>
+      </a>
+    </div>
+
+    <!-- Final -->
+    <!-- Contact information -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> Questions? Contact us through <a href="mailto:nguyen.phuc1@northeastern.edu">email</a>. </span>
+      </p>
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> A proud DS 4200 project at Northeastern University. </span>
+      </p>
+    </div>
+  </body>
+</html>

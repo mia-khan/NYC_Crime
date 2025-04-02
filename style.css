@@ -81,10 +81,20 @@ body {
 }
 
 .emphasisTitle {
-  font-size: 12rem;
+  color: #ffffff;
+  font-size: 8rem;
   font-style: bold;
   display: block;
+  padding-top: 2rem;
   margin: 2rem;
+  opacity: .8;
+}
+
+.subtitle {
+  font-size: 4rem;
+  font-style: bold;
+  display: block;
+  padding-inline: 5rem;
 }
 
 .titleAlt {
