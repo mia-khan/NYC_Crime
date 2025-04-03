@@ -114,7 +114,7 @@
       <!-- Column 1 -->
       <div class="column">
         <div>
-          <h3 style="color: #d1bda6;" class="columnText">How to Use the Interactive Crime Trends Visualization</h3>
+          <h2 style="color: #d1bda6;" class="columnText">How to Use the Interactive Crime Trends Visualization</h2>
 
           <p class="columnText">
             This interactive line chart displays crime trends over time in New York City parks. 
@@ -199,29 +199,55 @@
       "
       allowfullscreen
     ></iframe>
-    
 
     <div class="grid-container">
-      <!-- Column 1 -->
+      <!-- Left Column -->
       <div class="column">
-        <div class="sticky">
-          <p class="columnText">
-            Description.
-          </p>
-
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="column">
-        <img
-          src="crime_types_stacked.png"
-        />
-        <p class="photoCaption">
-          New York Police Department officers standing by.
+        <h2 style="color: #d1bda6;" class="columnText">How to Use the Interactive Crime Trends Dashboard</h2>
+        <p class="columnText">
+          This dashboard visualizes crime trends over time in New York City parks, based on quarterly crime reports from 
+          <strong>Q1 2023 to Q4 2024</strong>. It’s powered by an interactive line chart, which lets you explore the data by both 
+          <strong>crime type</strong> and <strong>borough</strong>.
         </p>
+    
+        <h3 class="columnText">Filter by Borough</h3>
+        <ul class="columnText">
+          <li>Use the <strong>dropdown menu</strong> below the chart labeled <em>"Select Borough"</em>.</li>
+          <li>Select any NYC borough (e.g., Manhattan, Bronx, Brooklyn).</li>
+          <li>The chart will instantly update to show trends <strong>only for that borough</strong>.</li>
+        </ul>
+    
+        <h3 class="columnText">Filter by Crime Type</h3>
+        <ul class="columnText">
+          <li>Use the <strong>white radio buttons</strong> labeled with different crime categories.</li>
+          <li>Click a crime type (e.g., <em>Robbery</em>, <em>Rape</em>, <em>Burglary</em>) to focus on that trend.</li>
+          <li>The chart will show how that crime has changed over time.</li>
+          <li><strong>Note:</strong> If your version includes “All,” it will show all crime types together as separate lines.</li>
+        </ul>
+      </div>
+    
+      <!-- Right Column -->
+      <div class="column" class="columnText">
+        <h3 class="columnText">What the Chart Shows</h3>
+        <ul class="columnText">
+          <li>The <strong>x-axis</strong> represents time, broken into quarters from <strong>Q1 2023 to Q4 2024</strong>.</li>
+          <li>The <strong>y-axis</strong> shows the <em>total number of reported crimes</em>.</li>
+          <li>Each line represents a crime type and is <strong>color-coded</strong> for easy comparison.</li>
+          <li>Data is aggregated and sourced from <strong>official NYC crime statistics</strong> in public parks.</li>
+        </ul>
+    
+        <h3 class="columnText">Learn Yourself: </h3>
+        <ul class="columnText">
+          <li>See <strong>which crimes are increasing or decreasing</strong> over time.</li>
+          <li>Spot <strong>seasonal trends</strong> (e.g., spikes in summer).</li>
+          <li>Compare boroughs to understand <strong>regional differences</strong>.</li>
+          <li>Use alongside other charts for <strong>deeper insights</strong>.</li>
+        </ul>
       </div>
     </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
     <!-- Back to Top Button -->
     <div class="flex-container">
