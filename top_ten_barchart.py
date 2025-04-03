@@ -32,7 +32,7 @@ sm = cm.ScalarMappable(cmap=flare_cmap)
 sm.set_array(top_parks.values)
 
 cbar = plt.colorbar(sm, orientation='vertical', pad=0.02, ax=ax)
-cbar.set_label('Crime Severity (Color Intensity)', fontsize=11)
+cbar.set_label('Crime Rampancy (via Color Intensity)', fontsize=11)
 
 ax.grid(axis='x', linestyle='--', alpha=0.7)
 plt.tight_layout()

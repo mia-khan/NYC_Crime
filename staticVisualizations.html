@@ -81,7 +81,7 @@
       <script>
         const summaryButton = document.getElementById("summaryButton");
         summaryButton.addEventListener("click", function () {
-          window.location.href = "popularity.html";
+          window.location.href = "summary.html";
         });
       </script>
     </div>
@@ -92,7 +92,7 @@
     <!-- Section 1: Crime Distribution by Borough -->
     <h2 class="secondary" id="Popularity">
       <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Bar Chart</p>
-      1. Crime Distribution by Borough
+      1. Crime Distribution by Borough Per Capita
     </h2>
 
 
@@ -132,10 +132,13 @@
       </div>
     </div>
 
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
     <!-- Section 2: Crime Type Breakdown -->
     <h2 class="secondary" id="Popularity">
       <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Stacked Bar Chart</p>
-      2. Crime Types by Borough
+      2. Crime Types by Borough Per Capita
     </h2>
 
 
@@ -175,8 +178,11 @@
       </div>
     </div>
 
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-<!-- Section 3: Park Size vs. Crime Count -->
+
+    <!-- Section 3: Park Size vs. Crime Count -->
     <h2 class="secondary" id="Popularity">
       <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Scatter Plot</p>
       3. Park Size vs. Crime Count
@@ -219,12 +225,115 @@
         </p>
       </div>
     </div>
-    <!-- Back to Top Button -->
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Section 4: Top 10 Most Dangerous Parks -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Horizontal Bar Chart</p>
+      4. Top 10 Most Dangerous Parks in New York City Park System between 2023 & 2024
+    </h2>
+
+
+    <div class="grid-container">
+      <!-- Column 1 -->
+      <div class="column">
+        <div class="sticky">
+          <div class="columnText">
+            <p>
+              This horizontal bar chart highlights the top 10 most dangerous parks in New York City, ranked by total crime count, and offers insight into the intensity of crime activity at each location through color shading.
+            </p>
+          
+            <h3>Analysis Details</h3>
+            <ul>
+              <li><strong>Flushing Meadows Corona Park</strong> tops the list with the highest total crime count, indicated by the darkest shade, signifying both high frequency and intensity of reported crimes.</li>
+              <li><strong>Washington Square Park</strong> follows closely behind, also marked with a deep color tone, reflecting significant criminal activity.</li>
+              <li>Mid-ranked parks like <strong>Coney Island Beach & Boardwalk</strong>, <strong>Bryant Park</strong>, and <strong>Randall's Island Park</strong> show moderate total crime counts but maintain a consistent color range, suggesting similar severity levels.</li>
+              <li>Lower on the list, parks like <strong>Union Square Park</strong> and <strong>Riverside Park</strong> exhibit lighter colors and smaller bars, indicating relatively lower crime volumes and severity.</li>
+              <li>The use of color as a proxy for crime severity enhances the chart’s ability to convey not just frequency, but also the relative danger level at each park.</li>
+            </ul>
+          
+            <p>
+              This visualization provides a useful tool for prioritizing public safety efforts, allowing law enforcement and city planners to focus interventions in parks where crime is both frequent and severe.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <img
+          src="top_10_parks.png"
+        />
+        <p class="photoCaption">
+          Top 10 NYC parks ranked by total reported crime from 2023–2024. Darker bars indicate higher crime rampancy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Navigation buttons -->
     <div class="flex-container">
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> Check out next: </span>
+      </p>
+
+      <button id="indexButtonBottom">Introduction 👋</button>
+      <script>
+        const indexButtonBottom = document.getElementById("indexButtonBottom");
+        indexButtonBottom.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+      
+      <button id="referencesButtonBottom">References 📚</button>
+      <script>
+        referencesButtonBottom.addEventListener("click", function () {
+          window.location.href = "references.html";
+        });
+      </script>
+
+      <button id="ourDataButtomBottom">Our Data 📊</button>
+      <script>
+        ourDataButtomBottom.addEventListener("click", function () {
+          window.location.href = "ourdata.html";
+        });
+      </script>
+
       <a href="#Top">
         <button class="buttonEmphasis">Back to Top ↑</button>
       </a>
+
+      <!--
+      <button id="sVisualizationsButtonBottom">Static Visualizations 🖼️</button>
+      <script>
+        sVisualizationsButtonBottom.addEventListener("click", function () {
+          window.location.href = "staticVisualizations.html";
+        });
+      </script>
+      -->
+
+      <button id="iVisualizationsButtonBottom">Interactive Visualizations 👾</button>
+      <script>
+        iVisualizationsButtonBottom.addEventListener("click", function () {
+          window.location.href = "interactiveVisualizations.html";
+        });
+      </script>
+
+      <button id="summaryButtonBottom">Summary & Findings 🔭</button>
+      <script>
+        summaryButtonBottom.addEventListener("click", function () {
+          window.location.href = "summary.html";
+        });
+      </script>
     </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
     <!-- Final -->
     <!-- Contact information -->
