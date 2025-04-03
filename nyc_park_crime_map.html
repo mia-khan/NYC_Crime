@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NYC Park Crime Heatmap</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    svg {
+      width: 100%;
+      height: 90vh;
+    }
+    .tooltip {
+      position: absolute;
+      background: white;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h2>NYC Park Crime Heatmap</h2>
+  <svg></svg>
+  <div id="tooltip" class="tooltip"></div>
+
+  <script>
+  const svg = d3.select("svg");
+  const tooltip = d3.select("#tooltip");
+  const width = window.innerWidth;
+  const height = window.innerHeight * 0.85;
+
+  Promise.all([
+    d3.json("new-york-city-boroughs.geojson"),
+    d3.json("parks_top100.geojson")
+  ]).then(([boroughs, parks]) => {
+    const projection = d3.geoMercator().fitSize([width, height], boroughs);
+    const path = d3.geoPath().projection(projection);
+
+    // Draw borough base map
+    svg.selectAll(".borough")
+      .data(boroughs.features)
+      .enter().append("path")
+      .attr("class", "borough")
+      .attr("d", path)
+      .attr("fill", "#f0f0f0")
+      .attr("stroke", "#999")
+      .attr("stroke-width", 0.5);
+
+    // Crime color scale
+    const colorScale = d3.scaleSequential()
+      .domain([0, d3.max(parks.features, d => d.properties.total_crime)])
+      .interpolator(d3.interpolateReds);
+
+    // Draw parks over the boroughs
+    svg.selectAll(".park")
+      .data(parks.features)
+      .enter().append("path")
+      .attr("class", "park")
+      .attr("d", path)
+      .attr("fill", d => colorScale(d.properties.total_crime))
+      .attr("stroke", "#444")
+      .attr("stroke-width", 0.3)
+      .on("mouseover", (event, d) => {
+        tooltip.transition().style("opacity", 1);
+        tooltip.html(`<strong>${d.properties.park}</strong><br/>Crimes: ${d.properties.total_crime}`)
+               .style("left", `${event.pageX + 10}px`)
+               .style("top", `${event.pageY - 28}px`);
+      })
+      .on("mouseout", () => tooltip.transition().style("opacity", 0));
+  });
+</script>
+
+</body>
+</html>
