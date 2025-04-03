@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.freepik.com/256/12861/12861836.png?semt=ais_hybrid"
+    />
+    <title>Interactive Visualizations</title>
+    
+  </head>
+
+  <body>
+    <!-- Title, using custom font -->
+    <h1 class="title" id="top">
+      <span class="emphasisTitle">Shade or Shady?</span>
+    </h1>
+
+    <!-- Members -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> By: Phuc (John) Nguyen, Nisha Gupta, Mia Khan</span>
+      </p>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Anchor buttons -->
+    <div class="flex-container">
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> Explore: </span>
+      </p>
+
+      <button id="indexButton">Introduction 👋</button>
+      <script>
+        const indexButton = document.getElementById("indexButton");
+        indexButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+
+      <button id="referencesButton">References 📚</button>
+      <script>
+        const referencesButton = document.getElementById("referencesButton");
+        referencesButton.addEventListener("click", function () {
+          window.location.href = "references.html";
+        });
+      </script>
+
+      <button id="ourDataButtom">Our Data 📊</button>
+      <script>
+        const ourDataButtom = document.getElementById("ourDataButtom");
+        ourDataButtom.addEventListener("click", function () {
+          window.location.href = "ourdata.html";
+        });
+      </script>
+
+      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <script>
+        const sVisualizationsButton = document.getElementById("sVisualizationsButton");
+        sVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "staticVisualizations.html";
+        });
+      </script>
+
+      <button id="iVisualizationsButton" class="buttonEmphasis">This is: Interactive Visualizations 👾</button>
+      <!--
+      <script>
+        const iVisualizationsButton = document.getElementById("iVisualizationsButton");
+        iVisualizationsButton.addEventListener("click", function () {
+          window.location.href = "interactiveVisualizations.html";
+        });
+      </script>
+      -->
+
+      <button id="summaryButton">Summary & Findings 🔭</button>
+      <script>
+        const summaryButton = document.getElementById("summaryButton");
+        summaryButton.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+    </div>
+    
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Section 1: Crime Distribution by Borough -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Interactive Altair Multi-Line Chart</p>
+      1. Crime Trends Over Each Quarter of NYC Parks in 2023 & 2024
+    </h2>
+
+    <iframe 
+      src="interactive_crime_trends_chart.html" 
+      style="
+        width: 100%;
+        max-width: 100%;
+        height: 800px;
+        border: none;
+        display: block;
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+      "
+      allowfullscreen
+    ></iframe>
+
+    <div class="grid-container">
+      <!-- Column 1 -->
+      <div class="column">
+        <div>
+          <h3 style="color: #d1bda6;" class="columnText">How to Use the Interactive Crime Trends Visualization</h3>
+
+          <p class="columnText">
+            This interactive line chart displays crime trends over time in New York City parks. 
+            It is embedded directly into the webpage using an Altair-generated HTML chart.
+          </p>
+
+          <h3 class="columnText">Filter by Crime Type</h3>
+          <ul class="columnText">
+            <li>Below the chart, you'll find a row of <strong>white radio buttons</strong> labeled with different crime categories.</li>
+            <li>By <strong>clicking any crime type</strong>, the chart will update instantly to show only that type over time.</li>
+            <li>The <strong>“All” option</strong> resets the view to display trends for all crime types together.</li>
+          </ul>
+
+          <h3 class="columnText">What Crime Types Are Available?</h3>
+          <p class="columnText">The chart allows you to explore trends for:</p>
+          <ul class="columnText">
+            <li>Murder</li>
+            <li>Rape</li>
+            <li>Robbery</li>
+            <li>Felony Assault</li>
+            <li>Burglary</li>
+            <li>Grand Larceny</li>
+            <li>Grand Larceny of Motor Vehicle</li>
+          </ul>
+          <p class="columnText">Each one corresponds to a distinct <strong>color-coded line</strong> in the chart (when "All" is selected).</p>
+
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <div>
+          <h3 class="columnText">What the Chart Shows</h3>
+          <ul class="columnText">
+            <li>The <strong>x-axis</strong> represents time, broken down by <em>quarters</em> from <strong>Q1 2023 to Q4 2024</strong>.</li>
+            <li>The <strong>y-axis</strong> shows the <em>total number of crimes</em> reported for each selected type during each quarter.</li>
+            <li>All data is aggregated citywide and sourced from <strong>official NYC crime statistics</strong> reported in public parks.</li>
+          </ul>
+
+          <p class="columnText">This visualization helps highlight:</p>
+          <ul class="columnText">
+            <li>Which crimes are increasing or decreasing over time</li>
+            <li>Seasonal or cyclical crime patterns (e.g., spikes in summer)</li>
+            <li>Differences in frequency across crime types (e.g., grand larceny is consistently higher)</li>
+          </ul>
+
+          <h3 class="columnText">Explore Further</h3>
+          <p class="columnText">
+            You can:
+            <ul class="columnText">
+              <li>Toggle different crime types to compare them</li>
+              <li>Observe specific quarters with unusual spikes or drops</li>
+              <li>Use this chart alongside borough-level and stacked visualizations elsewhere on the site</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Section 2: Crime Types -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
+        Stacked Bar Chart
+      </p>
+      2. Breakdown of Major Crime Types
+    </h2>
+    
+
+    <div class="grid-container">
+      <!-- Column 1 -->
+      <div class="column">
+        <div class="sticky">
+          <p class="columnText">
+            Description.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <img
+          src="crime_types_stacked.png"
+        />
+        <p class="photoCaption">
+          New York Police Department officers standing by.
+        </p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="flex-container">
+      <a href="#Top">
+        <button class="buttonEmphasis">Back to Top ↑</button>
+      </a>
+    </div>
+
+    <!-- Final -->
+    <!-- Contact information -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> Questions? Contact us through <a href="mailto:nguyen.phuc1@northeastern.edu">email</a>. </span>
+      </p>
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> A proud DS 4200 project at Northeastern University. </span>
+      </p>
+    </div>
+  </body>
+</html>
