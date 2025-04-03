@@ -50,15 +50,13 @@
         });
       </script>
 
-      <button id="ourDataButtom" class="buttonEmphasis">This is: Our Data 📊</button>
-      <!--
+      <button id="ourDataButtom">Our Data 📊</button>
       <script>
         const ourDataButtom = document.getElementById("ourDataButtom");
         ourDataButtom.addEventListener("click", function () {
-          window.location.href = "popularity.html";
+          window.location.href = "ourdata.html";
         });
       </script>
-      -->
 
       <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
       <script>
@@ -68,13 +66,15 @@
         });
       </script>
 
-      <button id="iVisualizationsButton">Interactive Visualizations 👾</button>
+      <button id="iVisualizationsButton" class="buttonEmphasis">This is: Interactive Visualizations 👾</button>
+      <!--
       <script>
         const iVisualizationsButton = document.getElementById("iVisualizationsButton");
         iVisualizationsButton.addEventListener("click", function () {
           window.location.href = "interactiveVisualizations.html";
         });
       </script>
+      -->
 
       <button id="summaryButton">Summary & Findings 🔭</button>
       <script>
@@ -88,68 +88,20 @@
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-    <!-- Section 1: Popularity -->
-    <h2 class="secondary" id="Popularity">Our Data, Its Origin, Its Significance</h2>
+    <!-- Section 1: Crime Distribution by Borough -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Bar Chart</p>
+      1. Crime Distribution by Borough
+    </h2>
+    
 
     <div class="grid-container">
       <!-- Column 1 -->
       <div class="column">
         <div class="sticky">
           <p class="columnText">
-            Our dataset is sourced directly from the <strong>New York Police Department’s official park crime statistics</strong>,
-            covering the last eight quarters (from Q1 2023 through Q4 2024). We combined and cleaned these datasets to create a
-            unified view of crime trends in New York City parks over time.
+            Description.
           </p>
-
-          <p class="columnText">
-            After merging the quarterly data files, the final dataset contains approximately <strong>9,232 observations</strong>,
-            which far exceeds the minimum requirement for this project. These observations represent reported incidents of
-            seven major felony crime types within NYC parks.
-          </p>
-
-          <h3 class="columnText">Key Features Included</h3>
-          <ul class="columnText">
-            <li><strong>Crime Type:</strong> Murder, rape, robbery, felony assault, burglary, grand larceny, grand larceny of a motor vehicle</li>
-            <li><strong>Park Details:</strong> Name, size, type (category), and borough location</li>
-            <li><strong>Time Frame:</strong> Quarterly breakdown from 2023 to 2024</li>
-            <li><strong>Attributes:</strong> A balanced mix of categorical and continuous variables</li>
-          </ul>
-
-          <p class="columnText">
-            All records were preprocessed to ensure consistency in formatting, remove duplicates, and handle missing values. Such missing values, especially in reported
-            murders were handled properly. Data from interborough parks were split appropriately (by two). Categorical fields such as borough and crime type were standardized for clarity in visualizations. 
-          </p>
-      
-          <p class="columnText">
-            This cleaned and enriched dataset allows us to explore how crime varies across NYC's boroughs, types of parks,
-            and time, forming the foundation of our visual analysis and insights.
-          </p>
-
-          <p class="columnText">
-            Access the data from NYPD
-            <a
-              href="https://www.nyc.gov/site/nypd/stats/crime-statistics/park-crime-stats.page"
-              target="_blank"
-              >here</a
-            >.
-          </p>
-
-          <p class="columnText">
-            Furthermore ​to enrich your analysis of crime trends in New York City's parks, incorporating borough-level population data is essential. The dataset titled "New York City Population by Borough, 1950 - 2040" 
-            provides both historical census data and future projections, offering a comprehensive view of demographic changes over time.
-          </p>
-
-          <p class="columnText">
-            Access the decennial data from the City of New York
-            <a
-              href="https://catalog.data.gov/dataset/new-york-city-population-by-borough-1950-2040"
-              target="_blank"
-              >here</a
-            >.
-          </p>
-          
-
-          
 
         </div>
       </div>
@@ -157,7 +109,38 @@
       <!-- Column 2 -->
       <div class="column">
         <img
-          src="https://static.politico.com/b8/6f/f387ac3a454bbe8a92aa6b39fb26/https-delivery-gettyimages.com/downloads/1479418351"
+          src="crime_distribution_barchart.png"
+        />
+        <p class="photoCaption">
+          New York Police Department officers standing by.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2: Crime Types -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
+        Stacked Bar Chart
+      </p>
+      2. Breakdown of Major Crime Types
+    </h2>
+    
+
+    <div class="grid-container">
+      <!-- Column 1 -->
+      <div class="column">
+        <div class="sticky">
+          <p class="columnText">
+            Description.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <img
+          src="crime_types_stacked.png"
         />
         <p class="photoCaption">
           New York Police Department officers standing by.
