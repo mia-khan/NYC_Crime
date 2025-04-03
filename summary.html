@@ -8,7 +8,8 @@
       rel="icon"
       href="https://cdn-icons-png.freepik.com/256/12861/12861836.png?semt=ais_hybrid"
     />
-    <title>References</title>
+    <title>Summary & Findings</title>
+
   </head>
 
   <body>
@@ -50,15 +51,13 @@
         });
       </script>
 
-      <button id="ourDataButtom" class="buttonEmphasis">This is: Our Data 📊</button>
-      <!--
+      <button id="ourDataButtom">Our Data 📊</button>
       <script>
         const ourDataButtom = document.getElementById("ourDataButtom");
         ourDataButtom.addEventListener("click", function () {
-          window.location.href = "popularity.html";
+          window.location.href = "ourdata.html";
         });
       </script>
-      -->
 
       <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
       <script>
@@ -76,94 +75,105 @@
         });
       </script>
 
-      <button id="summaryButton">Summary & Findings 🔭</button>
-      <script>
-        const summaryButton = document.getElementById("summaryButton");
-        summaryButton.addEventListener("click", function () {
-          window.location.href = "index.html";
-        });
-      </script>
+      <button id="summaryButton" class="buttonEmphasis">This is: Summary & Findings 🔭</button>
+
     </div>
-    
+
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-    <!-- Section 1: Popularity -->
-    <h2 class="secondary" id="Popularity">Our Data, Its Origin, Its Significance</h2>
+    <!-- Section: NYC Park Crime Analysis -->
+    <h2 class="secondary" id="Analysis">NYC Park Crime Analysis: Summary and Findings</h2>
 
     <div class="grid-container">
       <!-- Column 1 -->
       <div class="column">
         <div class="sticky">
           <p class="columnText">
-            Our dataset is sourced directly from the <strong>New York Police Department’s official park crime statistics</strong>,
-            covering the last eight quarters (from Q1 2023 through Q4 2024). We combined and cleaned these datasets to create a
-            unified view of crime trends in New York City parks over time.
+            New York City parks are vital urban sanctuaries where safety is paramount. This analysis examines major felony crimes in NYC parks (2023-2024), revealing how borough location, park characteristics, and seasonal factors influence crime patterns.
           </p>
 
-          <p class="columnText">
-            After merging the quarterly data files, the final dataset contains approximately <strong>9,232 observations</strong>,
-            which far exceeds the minimum requirement for this project. These observations represent reported incidents of
-            seven major felony crime types within NYC parks.
-          </p>
-
-          <h3 class="columnText">Key Features Included</h3>
+          <h3 class="columnText">Geographic Distribution</h3>
           <ul class="columnText">
-            <li><strong>Crime Type:</strong> Murder, rape, robbery, felony assault, burglary, grand larceny, grand larceny of a motor vehicle</li>
-            <li><strong>Park Details:</strong> Name, size, type (category), and borough location</li>
-            <li><strong>Time Frame:</strong> Quarterly breakdown from 2023 to 2024</li>
-            <li><strong>Attributes:</strong> A balanced mix of categorical and continuous variables</li>
+            <li><strong>Manhattan shows the highest crime concentration</strong> despite its relatively small area, likely due to high visitor density and tourist activity.</li>
+            <li><strong>Staten Island maintains the lowest crime rates</strong> across all categories, suggesting different usage patterns and demographic factors.</li>
+            <li>These disparities highlight the need for <strong>location-specific safety strategies</strong> rather than uniform citywide approaches.</li>
           </ul>
 
-          <p class="columnText">
-            All records were preprocessed to ensure consistency in formatting, remove duplicates, and handle missing values. Such missing values, especially in reported
-            murders were handled properly. Data from interborough parks were split appropriately (by two). Categorical fields such as borough and crime type were standardized for clarity in visualizations. 
-          </p>
-      
-          <p class="columnText">
-            This cleaned and enriched dataset allows us to explore how crime varies across NYC's boroughs, types of parks,
-            and time, forming the foundation of our visual analysis and insights.
-          </p>
-
-          <p class="columnText">
-            Access the data from NYPD
-            <a
-              href="https://www.nyc.gov/site/nypd/stats/crime-statistics/park-crime-stats.page"
-              target="_blank"
-              >here</a
-            >.
-          </p>
-
-          <p class="columnText">
-            Furthermore ​to enrich your analysis of crime trends in New York City's parks, incorporating borough-level population data is essential. The dataset titled "New York City Population by Borough, 1950 - 2040" 
-            provides both historical census data and future projections, offering a comprehensive view of demographic changes over time.
-          </p>
-
-          <p class="columnText">
-            Access the decennial data from the City of New York
-            <a
-              href="https://catalog.data.gov/dataset/new-york-city-population-by-borough-1950-2040"
-              target="_blank"
-              >here</a
-            >.
-          </p>
-          
-
-          
-
+          <h3 class="columnText">Crime Type Patterns</h3>
+          <ul class="columnText">
+            <li><strong>Grand larceny dominates</strong> across all boroughs but is especially prevalent in Manhattan parks.</li>
+            <li><strong>Felony assault remains significant</strong> across all five boroughs, requiring focused prevention.</li>
+            <li><strong>Violent crimes</strong> like murder and rape occur at much lower rates but require continued vigilance.</li>
+            <li>Each borough's <strong>unique crime profile</strong> suggests the need for tailored safety interventions.</li>
+          </ul>
         </div>
       </div>
 
       <!-- Column 2 -->
       <div class="column">
-        <img
-          src="https://static.politico.com/b8/6f/f387ac3a454bbe8a92aa6b39fb26/https-delivery-gettyimages.com/downloads/1479418351"
-        />
-        <p class="photoCaption">
-          New York Police Department officers standing by.
-        </p>
+        <div>
+          <h3 class="columnText">Park Size and Crime Relationship</h3>
+          <ul class="columnText">
+            <li>The correlation between <strong>park size and crime rates is not linear</strong>. While larger parks tend to have more incidents, many exceptions exist.</li>
+            <li><strong>Several outliers</strong> show that some large parks maintain low crime counts while certain smaller parks experience high crime rates.</li>
+            <li><strong>Design factors</strong> including visibility, access points, and layout appear more influential than size alone.</li>
+            <li>This finding suggests safety interventions should focus on specific design elements rather than simply park dimensions.</li>
+          </ul>
+
+          <h3 class="columnText">Temporal Trends</h3>
+          <ul class="columnText">
+            <li><strong>Seasonal patterns</strong> show notable crime increases during Q2 and Q3 (spring/summer months).</li>
+            <li><strong>Summer peaks</strong> are particularly evident for grand larceny and robbery, correlating with increased park usage.</li>
+            <li>Year-over-year comparison shows <strong>modest safety improvements</strong> from 2023 to 2024.</li>
+            <li>Property crimes show more pronounced seasonal fluctuations than violent offenses.</li>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <h2 class="secondary" id="Conclusions">Main Conclusions & Future Work</h2>
+
+    <div class="grid-container">
+      <!-- Column 1 - Conclusions -->
+      <div class="column">
+        <div class="sticky">
+          <h3 class="columnText">Main Conclusions</h3>
+          <p class="columnText">
+            Our analysis challenges conventional assumptions about urban park safety:
+          </p>
+          <ol class="columnText">
+            <li><strong>Safety is not uniform across NYC parks</strong> - Manhattan's high crime rates contrast with Staten Island's lower rates, indicating location context matters more than borough-wide generalizations.</li>
+            <li><strong>Crime profiles vary significantly by area</strong> - Grand larceny dominates Manhattan while the Bronx shows higher rates of violent crimes, requiring tailored approaches.</li>
+            <li><strong>Park size doesn't predict safety</strong> - Other factors like design, visibility, and surrounding neighborhood characteristics play more decisive roles.</li>
+            <li><strong>Seasonal patterns offer actionable insights</strong> - The predictable increase in summer crimes provides clear opportunities for strategic resource allocation.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Column 2 - Future Work -->
+      <div class="column">
+        <div>
+          <h3 class="columnText">Future Work and Recommendations</h3>
+          <p class="columnText">
+            To build upon these findings and create safer parks, we recommend:
+          </p>
+          <ol class="columnText">
+            <li><strong>Case studies of outlier parks</strong> - Investigate locations that defy expected trends to identify transferable safety practices.</li>
+            <li><strong>Development of a park safety index</strong> - Create a metric incorporating crime data with design features and usage patterns.</li>
+            <li><strong>Targeted design interventions</strong> - Test specific improvements in high-crime parks (lighting, sightlines, access controls).</li>
+            <li><strong>Expanded temporal analysis</strong> - Incorporate time-of-day patterns and historical data to identify longer-term trends.</li>
+            <li><strong>Integration of community perception</strong> - Combine statistics with community feedback to better understand perceived versus actual safety.</li>
+          </ol>
+          <p class="columnText">
+            These approaches can help NYC develop more effective, data-driven park safety strategies while efficiently allocating resources where they'll have the greatest impact.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
     <!-- Back to Top Button -->
     <div class="flex-container">
