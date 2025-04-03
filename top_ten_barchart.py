@@ -36,4 +36,5 @@ cbar.set_label('Crime Severity (Color Intensity)', fontsize=11)
 
 ax.grid(axis='x', linestyle='--', alpha=0.7)
 plt.tight_layout()
+plt.savefig("top_10_parks.png", dpi=300)  # save as a PNG image
 plt.show()
