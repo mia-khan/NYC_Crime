@@ -59,20 +59,18 @@
       </script>
 
       <button id="sVisualizationsButton" class="buttonEmphasis">This is: Static Visualizations 🖼️</button>
-      <!--
       <script>
         const sVisualizationsButton = document.getElementById("sVisualizationsButton");
         sVisualizationsButton.addEventListener("click", function () {
-          window.location.href = "index.html";
+          window.location.href = "popularity.html";
         });
       </script>
-      -->
 
       <button id="iVisualizationsButton">Interactive Visualizations 👾</button>
       <script>
         const iVisualizationsButton = document.getElementById("iVisualizationsButton");
         iVisualizationsButton.addEventListener("click", function () {
-          window.location.href = "interactiveVisualizations.html";
+          window.location.href = "popularity.html";
         });
       </script>
 
@@ -80,11 +78,11 @@
       <script>
         const summaryButton = document.getElementById("summaryButton");
         summaryButton.addEventListener("click", function () {
-          window.location.href = "index.html";
+          window.location.href = "popularity.html";
         });
       </script>
     </div>
-    
+
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
@@ -93,15 +91,29 @@
       <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Bar Chart</p>
       1. Crime Distribution by Borough
     </h2>
-    
+
 
     <div class="grid-container">
       <!-- Column 1 -->
       <div class="column">
         <div class="sticky">
           <p class="columnText">
-            Description.
+            This visualization displays the total number of major felony crimes reported in parks across each of New York City’s five boroughs.
+            The stark differences highlight how crime is not evenly distributed throughout the city’s green spaces.
           </p>
+
+          <h3 class="columnText">Analysis Details</h3>
+          <ul class="columnText">
+            <li>Manhattan shows the highest total crime count among the five boroughs, suggesting higher crime rates in its parks despite its relatively small geographic area.</li>
+            <li>Staten Island exhibits the lowest crime counts, which may correlate with its lower population density and different park usage patterns.</li>
+            <li>The substantial difference between Manhattan and other boroughs may reflect factors such as higher visitor numbers, tourism concentration, or reporting differences.</li>
+            <li>This visualization underscores the importance of borough-specific safety strategies rather than citywide approaches.</li>
+          </ul>
+
+          <p class="columnText">
+            Understanding these differences is crucial for allocating police resources and implementing targeted safety measures in the most affected areas.
+          </p>
+
 
         </div>
       </div>
@@ -109,30 +121,42 @@
       <!-- Column 2 -->
       <div class="column">
         <img
-          src="crime_distribution_barchart.png"
+          src="pc_crime_distribution_barchart.png"
         />
         <p class="photoCaption">
-          New York Police Department officers standing by.
+          Bar chart showing total crime count across NYC boroughs.
         </p>
       </div>
     </div>
 
-    <!-- Section 2: Crime Types -->
+    <!-- Section 2: Crime Type Breakdown -->
     <h2 class="secondary" id="Popularity">
-      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
-        Stacked Bar Chart
-      </p>
-      2. Breakdown of Major Crime Types
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Stacked Bar Chart</p>
+      2. Crime Types by Borough
     </h2>
-    
+
 
     <div class="grid-container">
       <!-- Column 1 -->
       <div class="column">
         <div class="sticky">
           <p class="columnText">
-            Description.
+            This stacked bar chart breaks down the distribution of different crime types across NYC boroughs,
+            revealing not just where crimes occur most frequently, but also which types of crimes are most prevalent in each area.
           </p>
+
+          <h3 class="columnText">Analysis Details</h3>
+          <ul class="columnText">
+            <li>Grand Larceny appears to be the most common crime type across all boroughs, particularly in Manhattan, suggesting that theft is a primary concern in park areas.</li>
+            <li>Felony Assault shows notable presence across all boroughs, indicating that violent personal crimes remain a significant issue in public spaces.</li>
+            <li>More serious violent crimes like Murder and Rape, while present, make up a much smaller proportion of the total crime counts.</li>
+            <li>The proportion of different crime types varies by borough, suggesting that safety strategies should be tailored to address the specific crime profiles of each area.</li>
+          </ul>
+
+          <p class="columnText">
+             This visualization helps identify which specific crime types should be prioritized in each borough’s park safety initiatives.
+          </p>
+
 
         </div>
       </div>
@@ -140,14 +164,58 @@
       <!-- Column 2 -->
       <div class="column">
         <img
-          src="crime_types_stacked.png"
+          src="pc_crime_types_stacked.png"
         />
         <p class="photoCaption">
-          New York Police Department officers standing by.
+          Stacked bar chart comparing different crime types across NYC boroughs.
         </p>
       </div>
     </div>
 
+
+<!-- Section 3: Park Size vs. Crime Count -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Scatter Plot</p>
+      3. Park Size vs. Crime Count
+    </h2>
+
+
+    <div class="grid-container">
+      <!-- Column 1 -->
+      <div class="column">
+        <div class="sticky">
+          <p class="columnText">
+            Scatter plot analyzing the relationship between park size (acres) and total crime count.
+            This scatter plot explores whether there’s a correlation between the size of a park and the amount of crime that occurs within it.
+            Each point represents a park, with colors indicating the borough.
+          </p>
+
+          <h3 class="columnText">Analysis Details</h3>
+          <ul class="columnText">
+            <li>The visualization reveals that while there is a general trend of larger parks having more crime incidents, the relationship is not strictly linear.</li>
+            <li>Several outliers show that some large parks have disproportionately high crime counts, while others maintain relatively low numbers despite their size.</li>
+            <li>The clustering of points by borough suggests that location may play a more significant role than size alone in determining crime rates.</li>
+            <li>Smaller parks (under 50 acres) show considerable variance in crime counts, indicating that factors beyond size (such as location, design, and usage patterns) significantly influence safety.</li>
+          </ul>
+
+          <p class="columnText">
+             This analysis helps urban planners understand that size alone is not deterministic of park safety, and that design elements and location context must be considered in security planning.
+          </p>
+
+
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column">
+        <img
+          src="pc_parksize_vs_crime.png"
+        />
+        <p class="photoCaption">
+          Scatter plot analyzing the relationship between park size (acres) and total crime count.
+        </p>
+      </div>
+    </div>
     <!-- Back to Top Button -->
     <div class="flex-container">
       <a href="#Top">
