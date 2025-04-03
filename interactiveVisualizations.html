@@ -180,7 +180,7 @@
     <!-- Section 2: Interactive Dashboard: Crime Trends in NYC Public Parks by Quarter, Borough, and Crime Type (2023–2024) -->
     <h2 class="secondary" id="Popularity">
       <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
-        Interactive Dashboard:
+        Interactive Dashboard
       </p>
       2. Crime Trends in NYC Public Parks by Quarter, Borough, & Crime Type (2023–2024)
     </h2>
@@ -242,6 +242,72 @@
           <li>Spot <strong>seasonal trends</strong> (e.g., spikes in summer).</li>
           <li>Compare boroughs to understand <strong>regional differences</strong>.</li>
           <li>Use alongside other charts for <strong>deeper insights</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Section 3 -->
+    <h2 class="secondary" id="Popularity">
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
+        Geospatial Map with D3
+      </p>
+      3. NYC Park Major Crime Heat Map between 2023 & 2024
+    </h2>
+
+    <iframe 
+      src="nyc_park_crime_map.html" 
+      style="
+        width: 100%;
+        max-width: 100%;
+        height: 800px;
+        border: none;
+        display: block;
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+      "
+      allowfullscreen
+    ></iframe>
+
+    <div class="grid-container">
+      <!-- Left Column: Instructions -->
+      <div style="flex: 1 1 45%; margin-bottom: 2rem;" class="columnText">
+        <h2 style="color: #d1bda6;">How to Use the NYC Park Crime Heatmap</h2>
+        <p>This geospatial heatmap visualizes the total number of crimes reported in New York City public parks. It uses D3.js to map the data geographically, letting you explore spatial crime trends interactively.</p>
+
+        <h3>Explore the Map</h3>
+        <ul>
+          <li>Each park is displayed on a map based on its location, colored by total crime count.</li>
+          <li>Darker shades represent parks with higher crime totals.</li>
+          <li>Parks with low or no reported crimes will appear lighter or faded.</li>
+        </ul>
+
+        <h3>Interact with the Map</h3>
+        <ul>
+          <li>Hover over a park to see a <strong>tooltip</strong> showing its name and total crimes.</li>
+          <li>Click a park (if enabled) to view additional metadata such as borough or crime type breakdown.</li>
+          <li>The map is <em>static</em> for now, but may be upgraded to include filters by borough or year.</li>
+        </ul>
+      </div>
+
+      <!-- Right Column: Chart Details -->
+      <div style="flex: 1 1 45%;">
+        <h3>What the Map Shows</h3>
+        <ul>
+          <li>Geographic distribution of reported crime across NYC parks.</li>
+          <li>Color intensity reflects total crime count (e.g., <em>Flushing Meadows</em> will appear darker).</li>
+          <li>All park polygons are sourced from the official NYC Open Data parks shapefile.</li>
+          <li>Crime data was aggregated from public quarterly NYPD reports (2023–2024).</li>
+        </ul>
+
+        <h3>Learn Yourself:</h3>
+        <ul>
+          <li>Identify spatial <strong>crime clusters</strong> in the city.</li>
+          <li>Compare parks by <strong>relative safety</strong> visually, without reading tables.</li>
+          <li>Explore how crime correlates with park size, location, or borough.</li>
         </ul>
       </div>
     </div>
