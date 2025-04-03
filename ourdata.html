@@ -80,7 +80,7 @@
       <script>
         const summaryButton = document.getElementById("summaryButton");
         summaryButton.addEventListener("click", function () {
-          window.location.href = "index.html";
+          window.location.href = "summary.html";
         });
       </script>
     </div>
@@ -165,11 +165,79 @@
       </div>
     </div>
 
-    <!-- Back to Top Button -->
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Navigation buttons -->
     <div class="flex-container">
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> Check out next: </span>
+      </p>
+
+      <button id="indexButtonBottom">Introduction 👋</button>
+      <script>
+        const indexButtonBottom = document.getElementById("indexButtonBottom");
+        indexButtonBottom.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      </script>
+      
+      <button id="referencesButtonBottom">References 📚</button>
+      <script>
+        referencesButtonBottom.addEventListener("click", function () {
+          window.location.href = "references.html";
+        });
+      </script>
+
       <a href="#Top">
         <button class="buttonEmphasis">Back to Top ↑</button>
       </a>
+
+      <!--
+      <button id="ourDataButtomBottom">Our Data 📊</button>
+      <script>
+        ourDataButtomBottom.addEventListener("click", function () {
+          window.location.href = "ourdata.html";
+        });
+      </script>
+      -->
+
+      <button id="sVisualizationsButtonBottom">Static Visualizations 🖼️</button>
+      <script>
+        sVisualizationsButtonBottom.addEventListener("click", function () {
+          window.location.href = "staticVisualizations.html";
+        });
+      </script>
+
+      <button id="iVisualizationsButtonBottom">Interactive Visualizations 👾</button>
+      <script>
+        iVisualizationsButtonBottom.addEventListener("click", function () {
+          window.location.href = "interactiveVisualizations.html";
+        });
+      </script>
+
+      <button id="summaryButtonBottom">Summary & Findings 🔭</button>
+      <script>
+        summaryButtonBottom.addEventListener("click", function () {
+          window.location.href = "summary.html";
+        });
+      </script>
+    </div>
+
+    <!-- Divider for style -->
+    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
+
+    <!-- Final -->
+    <!-- Contact information -->
+    <div class="flex-container">
+      <p class="columnText">
+        <span style="color: #d1bda6"> Questions? Contact us through <a href="mailto:nguyen.phuc1@northeastern.edu">email</a>. </span>
+      </p>
+
+      <p class="columnText">
+        <span style="color: #d1bda6"> A proud DS 4200 project at Northeastern University. </span>
+      </p>
     </div>
 
     <!-- Final -->
