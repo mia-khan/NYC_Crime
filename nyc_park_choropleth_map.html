@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>NYC Park Crime Choropleth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #1e1e1e; }
+    #map { position: absolute; top: 0; bottom: 0; left: 250px; right: 0; }
+    #sidebar {
+      position: absolute; top: 0; left: 0; width: 250px; height: 100%;
+      background: #2c2c2c; padding: 15px;
+      color: white;
+      border-right: 1px solid #444; overflow-y: auto;
+    }
+    button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #0056b3; }
+    select {
+      width: 100%; margin-bottom: 10px;
+    }
+    .info {
+      padding: 6px 8px;
+      background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    .legend {
+      line-height: 18px;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 8px;
+      border-radius: 4px;
+    }
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <h3>Crime Filters</h3>
+    <label>Borough:</label>
+    <select id="boroughFilter"><option value="">All</option></select>
+
+    <label>Category:</label>
+    <select id="categoryFilter"><option value="">All</option></select>
+
+    <label>Year:</label>
+    <select id="yearFilter"><option value="">All</option></select>
+
+    <label>Crime Type:</label>
+    <select id="crimeTypeFilter">
+      <option value="TOTAL">Total</option>
+      <option value="MURDER">Murder</option>
+      <option value="RAPE">Rape</option>
+      <option value="ROBBERY">Robbery</option>
+      <option value="FELONY ASSAULT">Felony Assault</option>
+      <option value="GRAND LARCENY">Grand Larceny</option>
+      <option value="GRAND LARCENY OF MOTOR VEHICLE">Grand Larceny of Motor Vehicle</option>
+    </select>
+
+    <button onclick="resetFilters()">Reset Filters</button>
+  </div>
+
+  <div id="map"></div>
+
+  <script>
+    const map = L.map("map").setView([40.7128, -74.0060], 11);
+
+    // Dark base layer
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      attribution: "&copy; OpenStreetMap & CARTO",
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    let geojsonLayer;
+    let allData;
+
+    const info = L.control();
+    info.onAdd = function () {
+      this._div = L.DomUtil.create("div", "info");
+      this.update();
+      return this._div;
+    };
+    info.update = function (props) {
+      this._div.innerHTML = props
+        ? `<b>${props.park || props.SIGNNAME}</b><br />Crimes: ${props.TOTAL ?? 0}`
+        : "Hover over a park";
+    };
+    info.addTo(map);
+
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = function () {
+      const div = L.DomUtil.create("div", "legend");
+      const grades = [0, 5, 10, 20, 50, 100];
+      for (let i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+          `<i style="background:${getColor(grades[i] + 1)}"></i> ` +
+          `${grades[i]}${grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+'}`;
+      }
+      return div;
+    };
+    legend.addTo(map);
+
+    function getColor(d) {
+      return d > 100 ? '#990000' :
+             d > 50  ? '#cc0000' :
+             d > 20  ? '#ff3333' :
+             d > 10  ? '#ff6666' :
+             d > 5   ? '#ff9999' :
+             d > 0   ? '#ffcccc' :
+                       '#66ff00';
+    }
+
+    function style(feature, type) {
+      const value = feature.properties[type] ?? 0;
+      return {
+        fillColor: getColor(value),
+        weight: 1.5,
+        opacity: 1,
+        color: '#ffffff',
+        dashArray: '1',
+        fillOpacity: 0.75
+      };
+    }
+
+    function highlightFeature(e) {
+      const layer = e.target;
+      layer.setStyle({
+        weight: 3,
+        color: '#ffff66',
+        fillOpacity: 0.9
+      });
+      layer.bringToFront();
+      info.update(layer.feature.properties);
+    }
+
+    function resetHighlight(e) {
+      geojsonLayer.resetStyle(e.target);
+      info.update();
+    }
+
+    function onEachFeature(feature, layer) {
+      layer.on({ mouseover: highlightFeature, mouseout: resetHighlight });
+      const p = feature.properties;
+      layer.bindPopup(
+        `<strong>${p.park || p.SIGNNAME || "Unnamed Park"}</strong><br/>` +
+        `Total: ${p.TOTAL ?? 0}<br/>` +
+        `Rape: ${p.RAPE ?? 0}<br/>Robbery: ${p.ROBBERY ?? 0}<br/>` +
+        `Felony Assault: ${p["FELONY ASSAULT"] ?? 0}<br/>` +
+        `Larceny: ${p["GRAND LARCENY"] ?? 0}<br/>` +
+        `Larceny (Vehicle): ${p["GRAND LARCENY OF MOTOR VEHICLE"] ?? 0}`
+      );
+    }
+
+    function populateDropdown(id, values) {
+      const select = document.getElementById(id);
+      [...new Set(values)].sort().forEach(val => {
+        if (val) {
+          const opt = document.createElement("option");
+          opt.value = val;
+          opt.textContent = val;
+          select.appendChild(opt);
+        }
+      });
+    }
+
+    function filterAndRedraw() {
+      const borough = document.getElementById("boroughFilter").value;
+      const category = document.getElementById("categoryFilter").value;
+      const year = document.getElementById("yearFilter").value;
+      const crimeType = document.getElementById("crimeTypeFilter").value;
+
+      if (geojsonLayer) geojsonLayer.remove();
+
+      const filtered = allData.features.filter(f => {
+        const p = f.properties;
+        return (!borough || p.BOROUGH === borough) &&
+               (!category || p.CATEGORY === category) &&
+               (!year || p.year == year);
+      });
+
+      geojsonLayer = L.geoJson(filtered, {
+        style: f => style(f, crimeType),
+        onEachFeature: onEachFeature
+      }).addTo(map);
+    }
+
+    function resetFilters() {
+      document.getElementById("boroughFilter").value = "";
+      document.getElementById("categoryFilter").value = "";
+      document.getElementById("yearFilter").value = "";
+      document.getElementById("crimeTypeFilter").value = "TOTAL";
+      filterAndRedraw();
+    }
+
+    fetch("merged_parks_crime.geojson")
+      .then(res => res.json())
+      .then(data => {
+        allData = data;
+
+        const boroughs = data.features.map(f => f.properties.BOROUGH);
+        const categories = data.features.map(f => f.properties.CATEGORY);
+        const years = data.features.map(f => f.properties.year);
+
+        populateDropdown("boroughFilter", boroughs);
+        populateDropdown("categoryFilter", categories);
+        populateDropdown("yearFilter", years);
+
+        ["boroughFilter", "categoryFilter", "yearFilter", "crimeTypeFilter"].forEach(id => {
+          document.getElementById(id).onchange = filterAndRedraw;
+        });
+
+        filterAndRedraw();
+      });
+  </script>
+</body>
+</html>
