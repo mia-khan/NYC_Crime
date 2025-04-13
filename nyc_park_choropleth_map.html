@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>NYC Park Crime Choropleth</title>
+  <title>NYC Park Crime Choropleth (2023 + 2024)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -11,19 +11,13 @@
     #map { position: absolute; top: 0; bottom: 0; left: 250px; right: 0; }
     #sidebar {
       position: absolute; top: 0; left: 0; width: 250px; height: 100%;
-      background: #2c2c2c; padding: 15px;
-      color: white;
+      background: #2c2c2c; padding: 15px; color: white;
       border-right: 1px solid #444; overflow-y: auto;
     }
     button {
-      margin-top: 10px;
-      padding: 6px 12px;
-      background-color: #007bff;
-      border: none;
-      color: white;
-      font-size: 14px;
-      border-radius: 4px;
-      cursor: pointer;
+      margin-top: 10px; padding: 6px 12px;
+      background-color: #007bff; border: none; color: white;
+      font-size: 14px; border-radius: 4px; cursor: pointer;
     }
     button:hover { background-color: #0056b3; }
     select {
@@ -43,10 +37,8 @@
       border-radius: 4px;
     }
     .legend i {
-      width: 18px;
-      height: 18px;
-      float: left;
-      margin-right: 8px;
+      width: 18px; height: 18px;
+      float: left; margin-right: 8px;
       opacity: 0.9;
     }
   </style>
@@ -82,7 +74,7 @@
   <script>
     const map = L.map("map").setView([40.7128, -74.0060], 11);
 
-    // Dark base layer
+    // Dark basemap
     L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
       attribution: "&copy; OpenStreetMap & CARTO",
       subdomains: 'abcd',
@@ -100,7 +92,7 @@
     };
     info.update = function (props) {
       this._div.innerHTML = props
-        ? `<b>${props.park || props.SIGNNAME}</b><br />Crimes: ${props.TOTAL ?? 0}`
+        ? `<b>${props.park || props.SIGNNAME}</b><br />Total: ${props.TOTAL ?? 0}`
         : "Hover over a park";
     };
     info.addTo(map);
@@ -133,20 +125,14 @@
       return {
         fillColor: getColor(value),
         weight: 1.5,
-        opacity: 1,
-        color: '#ffffff',
-        dashArray: '1',
+        color: '#fff',
         fillOpacity: 0.75
       };
     }
 
     function highlightFeature(e) {
       const layer = e.target;
-      layer.setStyle({
-        weight: 3,
-        color: '#ffff66',
-        fillOpacity: 0.9
-      });
+      layer.setStyle({ weight: 3, color: '#ffff66', fillOpacity: 0.9 });
       layer.bringToFront();
       info.update(layer.feature.properties);
     }
@@ -161,6 +147,7 @@
       const p = feature.properties;
       layer.bindPopup(
         `<strong>${p.park || p.SIGNNAME || "Unnamed Park"}</strong><br/>` +
+        `Year: ${p.year}<br/>` +
         `Total: ${p.TOTAL ?? 0}<br/>` +
         `Rape: ${p.RAPE ?? 0}<br/>Robbery: ${p.ROBBERY ?? 0}<br/>` +
         `Felony Assault: ${p["FELONY ASSAULT"] ?? 0}<br/>` +
@@ -172,7 +159,7 @@
     function populateDropdown(id, values) {
       const select = document.getElementById(id);
       [...new Set(values)].sort().forEach(val => {
-        if (val) {
+        if (val !== null && val !== undefined && val !== "") {
           const opt = document.createElement("option");
           opt.value = val;
           opt.textContent = val;
@@ -193,7 +180,7 @@
         const p = f.properties;
         return (!borough || p.BOROUGH === borough) &&
                (!category || p.CATEGORY === category) &&
-               (!year || p.year == year);
+               (!year || String(p.year) === year);
       });
 
       geojsonLayer = L.geoJson(filtered, {
@@ -210,7 +197,7 @@
       filterAndRedraw();
     }
 
-    fetch("merged_parks_crime.geojson")
+    fetch("merged_parks_crime_2023_2024.geojson")
       .then(res => res.json())
       .then(data => {
         allData = data;
@@ -221,7 +208,7 @@
 
         populateDropdown("boroughFilter", boroughs);
         populateDropdown("categoryFilter", categories);
-        populateDropdown("yearFilter", years);
+        populateDropdown("yearFilter", years.map(String));
 
         ["boroughFilter", "categoryFilter", "yearFilter", "crimeTypeFilter"].forEach(id => {
           document.getElementById(id).onchange = filterAndRedraw;
