@@ -6,3 +6,7 @@ Data
 Source: NYPD Park Crime Statistics (Last 8 Quarters)
 Records: ~9,232
 Features: Crime type, park name, size, category, borough
+
+# Welcome:
+
+**Please refer to 'DS4200 Final Writeup.docx' for the paragraph descriptions and live links.**
