@@ -59,7 +59,7 @@
         });
       </script>
 
-      <button id="sVisualizationsButton">Static Visualizations 🖼️</button>
+      <button id="sVisualizationsButton">Temporal & Spatial Crime Analysis 📊</button>
       <script>
         const sVisualizationsButton = document.getElementById("sVisualizationsButton");
         sVisualizationsButton.addEventListener("click", function () {
@@ -67,7 +67,7 @@
         });
       </script>
 
-      <button id="iVisualizationsButton" class="buttonEmphasis">This is: Interactive Visualizations 👾</button>
+      <button id="iVisualizationsButton" class="buttonEmphasis">This is: Borough-Level Crime Profiling 🚔</button>
       <!--
       <script>
         const iVisualizationsButton = document.getElementById("iVisualizationsButton");
@@ -89,104 +89,28 @@
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-    <!-- Section 1: Crime Distribution by Borough -->
-    <h2 class="secondary" id="Popularity">
-      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Interactive Altair Multi-Line Chart</p>
-      1. Crime Trends Over Each Quarter of NYC Parks in 2023 & 2024
-    </h2>
-
-    <iframe 
-      src="interactive_crime_trends_chart.html" 
-      style="
-        width: 100%;
-        max-width: 100%;
-        height: 800px;
-        border: none;
-        display: block;
-        margin: 0 auto;
-        padding: 0 1rem;
-        box-sizing: border-box;
-      "
-      allowfullscreen
-    ></iframe>
-
     <div class="grid-container">
-      <!-- Column 1 -->
-      <div class="column">
-        <div>
-          <h2 style="color: #d1bda6;" class="columnText">How to Use the Interactive Crime Trends Visualization</h2>
-
-          <p class="columnText">
-            This interactive line chart displays crime trends over time in New York City parks. 
-            It is embedded directly into the webpage using an Altair-generated HTML chart.
-          </p>
-
-          <h3 class="columnText">Filter by Crime Type</h3>
-          <ul class="columnText">
-            <li>Below the chart, you'll find a row of <strong>white radio buttons</strong> labeled with different crime categories.</li>
-            <li>By <strong>clicking any crime type</strong>, the chart will update instantly to show only that type over time.</li>
-            <li>The <strong>“All” option</strong> resets the view to display trends for all crime types together.</li>
-          </ul>
-
-          <h3 class="columnText">What Crime Types Are Available?</h3>
-          <p class="columnText">The chart allows you to explore trends for:</p>
-          <ul class="columnText">
-            <li>Murder</li>
-            <li>Rape</li>
-            <li>Robbery</li>
-            <li>Felony Assault</li>
-            <li>Burglary</li>
-            <li>Grand Larceny</li>
-            <li>Grand Larceny of Motor Vehicle</li>
-          </ul>
-          <p class="columnText">Each one corresponds to a distinct <strong>color-coded line</strong> in the chart (when "All" is selected).</p>
-
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="column">
-        <div>
-          <h3 class="columnText">What the Chart Shows</h3>
-          <ul class="columnText">
-            <li>The <strong>x-axis</strong> represents time, broken down by <em>quarters</em> from <strong>Q1 2023 to Q4 2024</strong>.</li>
-            <li>The <strong>y-axis</strong> shows the <em>total number of crimes</em> reported for each selected type during each quarter.</li>
-            <li>All data is aggregated citywide and sourced from <strong>official NYC crime statistics</strong> reported in public parks.</li>
-          </ul>
-
-          <p class="columnText">This visualization helps highlight:</p>
-          <ul class="columnText">
-            <li>Which crimes are increasing or decreasing over time</li>
-            <li>Seasonal or cyclical crime patterns (e.g., spikes in summer)</li>
-            <li>Differences in frequency across crime types (e.g., grand larceny is consistently higher)</li>
-          </ul>
-
-          <h3 class="columnText">Explore Further</h3>
-          <p class="columnText">
-            You can:
-            <ul class="columnText">
-              <li>Toggle different crime types to compare them</li>
-              <li>Observe specific quarters with unusual spikes or drops</li>
-              <li>Use this chart alongside borough-level and stacked visualizations elsewhere on the site</li>
-            </ul>
-          </p>
-        </div>
-      </div>
-    </div>
-
+      <h2 style="color: #d1bda6; margin-right: 2rem;" class="columnText">Borough-Level Crime Profiling 🚔</h2>
+      <p class="columnText">
+        This section highlights how park-related crime differs across NYC’s boroughs. 
+        By comparing crime rates per capita and breaking down crime type distributions, 
+        these visualizations reveal which boroughs face the greatest safety challenges — 
+        and what kinds of offenses are most prevalent in each area.
+      </p>
+    </div>    
+    
+    
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-    <!-- Section 2: Interactive Dashboard: Crime Trends in NYC Public Parks by Quarter, Borough, and Crime Type (2023–2024) -->
+    <!-- Section 1: Crime Distribution by Borough -->
     <h2 class="secondary" id="Popularity">
-      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
-        Interactive Dashboard
-      </p>
-      2. Crime Trends in NYC Public Parks by Quarter, Borough, & Crime Type (2023–2024)
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Hoverable D3 Bar Chart</p>
+      1. Top 10 Most Dangerous Parks Identification
     </h2>
 
     <iframe 
-      src="interactive_dashboard.html" 
+      src="top_10_parks_d3.html" 
       style="
         width: 100%;
         max-width: 100%;
@@ -203,26 +127,25 @@
     <div class="grid-container">
       <!-- Left Column -->
       <div class="column">
-        <h2 style="color: #d1bda6;" class="columnText">How to Use the Interactive Crime Trends Dashboard</h2>
+        <h2 style="color: #d1bda6;" class="columnText">How to Use the Top 10 Most Dangerous Parks Chart</h2>
         <p class="columnText">
-          This dashboard visualizes crime trends over time in New York City parks, based on quarterly crime reports from 
-          <strong>Q1 2023 to Q4 2024</strong>. It’s powered by an interactive line chart, which lets you explore the data by both 
-          <strong>crime type</strong> and <strong>borough</strong>.
+          This interactive horizontal bar chart ranks the <strong>top 10 NYC parks</strong> with the highest total crime counts 
+          reported from <strong>2023 to 2024</strong>. It helps identify public parks with the greatest safety concerns by visually comparing 
+          crime volume across individual locations.
         </p>
     
-        <h3 class="columnText">Filter by Borough</h3>
+        <h3 class="columnText">Interactive Features</h3>
         <ul class="columnText">
-          <li>Use the <strong>dropdown menu</strong> below the chart labeled <em>"Select Borough"</em>.</li>
-          <li>Select any NYC borough (e.g., Manhattan, Bronx, Brooklyn).</li>
-          <li>The chart will instantly update to show trends <strong>only for that borough</strong>.</li>
+          <li><strong>Hover over each bar</strong> to view an exact crime count in the tooltip.</li>
+          <li>Use the visual scale to compare parks at a glance — longer bars represent higher crime totals.</li>
+          <li>Chart is responsive to different screen sizes, making it easy to explore on desktop or mobile.</li>
         </ul>
     
-        <h3 class="columnText">Filter by Crime Type</h3>
+        <h3 class="columnText">Color Intensity</h3>
         <ul class="columnText">
-          <li>Use the <strong>white radio buttons</strong> labeled with different crime categories.</li>
-          <li>Click a crime type (e.g., <em>Robbery</em>, <em>Rape</em>, <em>Burglary</em>) to focus on that trend.</li>
-          <li>The chart will show how that crime has changed over time.</li>
-          <li><strong>Note:</strong> If your version includes “All,” it will show all crime types together as separate lines.</li>
+          <li>Bars are shaded from <span style="color:#e07b7b;">light red</span> to <span style="color:#640000;">dark red</span>.</li>
+          <li>Darker bars indicate <strong>higher total crime counts</strong>.</li>
+          <li>This visual cue helps you spot the most dangerous parks at a glance.</li>
         </ul>
       </div>
     
@@ -230,35 +153,33 @@
       <div class="column" class="columnText">
         <h3 class="columnText">What the Chart Shows</h3>
         <ul class="columnText">
-          <li>The <strong>x-axis</strong> represents time, broken into quarters from <strong>Q1 2023 to Q4 2024</strong>.</li>
-          <li>The <strong>y-axis</strong> shows the <em>total number of reported crimes</em>.</li>
-          <li>Each line represents a crime type and is <strong>color-coded</strong> for easy comparison.</li>
-          <li>Data is aggregated and sourced from <strong>official NYC crime statistics</strong> in public parks.</li>
+          <li>The <strong>x-axis</strong> shows the <em>total crime count</em> per park.</li>
+          <li>The <strong>y-axis</strong> lists the park names, ranked from highest to lowest crime.</li>
+          <li>This data is based on <strong>official NYC public park crime reports</strong> from 2023–2024.</li>
         </ul>
     
-        <h3 class="columnText">Learn Yourself: </h3>
+        <h3 class="columnText">Why It’s Useful:</h3>
         <ul class="columnText">
-          <li>See <strong>which crimes are increasing or decreasing</strong> over time.</li>
-          <li>Spot <strong>seasonal trends</strong> (e.g., spikes in summer).</li>
-          <li>Compare boroughs to understand <strong>regional differences</strong>.</li>
-          <li>Use alongside other charts for <strong>deeper insights</strong>.</li>
+          <li>Quickly identify which parks require increased attention or resource allocation.</li>
+          <li>Compare parks within or across boroughs for <strong>public safety planning</strong>.</li>
+          <li>Use alongside the choropleth map and borough-level breakdowns to validate patterns.</li>
+          <li>Helpful for policy makers, planners, or community organizers targeting specific park interventions.</li>
         </ul>
       </div>
     </div>
-
+    
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
 
-    <!-- Section 3 -->
+    <!-- Section 2: Crime Type Breakdown -->
     <h2 class="secondary" id="Popularity">
-      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
-        Geospatial Map with D3
-      </p>
-      3. NYC Park Major Crime Heat Map between 2023 & 2024
+      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Interactive Altair Bar Chart</p>
+      2. Park Crime Types Per 100,000 Residents by Borough
     </h2>
 
+
     <iframe 
-      src="nyc_park_choropleth_map.html" 
+      src= "crime_types_by_borough.html"
       style="
         width: 100%;
         max-width: 100%;
@@ -273,43 +194,53 @@
     ></iframe>
 
     <div class="grid-container">
-      <!-- Left Column: Instructions -->
-      <div style="flex: 1 1 45%; margin-bottom: 2rem;" class="columnText">
-        <h2 style="color: #d1bda6;">How to Use the NYC Park Crime Heatmap</h2>
-        <p>This geospatial heatmap visualizes the total number of crimes reported in New York City public parks. It uses D3.js to map the data geographically, letting you explore spatial crime trends interactively.</p>
-
-        <h3>Explore the Map</h3>
-        <ul>
-          <li>Each park is displayed on a map based on its location, colored by total crime count.</li>
-          <li>Darker shades represent parks with higher crime totals.</li>
-          <li>Parks with low or no reported crimes will appear lighter or faded.</li>
+      <!-- Left Column -->
+      <div class="column">
+        <h2 style="color: #d1bda6;" class="columnText">How to Use the Park Crime Types by Borough Chart</h2>
+        <p class="columnText">
+          This interactive stacked bar chart visualizes the distribution of major crime types per 100,000 residents across 
+          New York City boroughs. It provides a normalized view of how different types of park-related crimes affect each borough, 
+          using population-adjusted rates based on 2020 census data.
+        </p>
+    
+        <h3 class="columnText">Explore the Data</h3>
+        <ul class="columnText">
+          <li>Hover over each colored segment of a bar to view the exact <strong>crime type</strong> and its <strong>rate per 100,000 residents</strong>.</li>
+          <li>Each borough is represented as a full bar, stacked by individual crime categories.</li>
+          <li>The interactive tooltip reveals detailed breakdowns for quick comparisons across boroughs and crime types.</li>
         </ul>
-
-        <h3>Interact with the Map</h3>
-        <ul>
-          <li>Hover over a park to see a <strong>tooltip</strong> showing its name and total crimes.</li>
-          <li>Click a park (if enabled) to view additional metadata such as borough or crime type breakdown.</li>
+    
+        <h3 class="columnText">Crime Categories Included</h3>
+        <ul class="columnText">
+          <li>Murder</li>
+          <li>Rape</li>
+          <li>Robbery</li>
+          <li>Felony Assault</li>
+          <li>Burglary</li>
+          <li>Grand Larceny</li>
+          <li>Grand Larceny of Motor Vehicle</li>
         </ul>
       </div>
-
-      <!-- Right Column: Chart Details -->
-      <div style="flex: 1 1 45%;">
-        <h3>What the Map Shows</h3>
-        <ul>
-          <li>Geographic distribution of reported crime across NYC parks.</li>
-          <li>Color intensity reflects total crime count (e.g., <em>Flushing Meadows</em> will appear darker).</li>
-          <li>All park polygons are sourced from the official NYC Open Data parks shapefile.</li>
-          <li>Crime data was aggregated from public quarterly NYPD reports (2023–2024).</li>
+    
+      <!-- Right Column -->
+      <div class="column" class="columnText">
+        <h3 class="columnText">What the Chart Shows</h3>
+        <ul class="columnText">
+          <li>The <strong>x-axis</strong> lists each NYC borough (Bronx, Brooklyn, Manhattan, Queens, Staten Island).</li>
+          <li>The <strong>y-axis</strong> shows the <em>crime rate per 100,000 residents</em> — allowing for fair comparisons across boroughs of different sizes.</li>
+          <li>Each colored segment represents a specific crime type and is stackable to show borough-level totals.</li>
         </ul>
-
-        <h3>Learn Yourself:</h3>
-        <ul>
-          <li>Identify spatial <strong>crime clusters</strong> in the city.</li>
-          <li>Compare parks by <strong>relative safety</strong> visually, without reading tables.</li>
-          <li>Explore how crime correlates with park size, location, or borough.</li>
+    
+        <h3 class="columnText">Why It’s Useful</h3>
+        <ul class="columnText">
+          <li>Identify which boroughs experience the <strong>highest park-related crime rates</strong> overall.</li>
+          <li>Compare which <strong>crime types are most prevalent</strong> in each area — e.g., Grand Larceny in Manhattan vs. Felony Assault in the Bronx.</li>
+          <li>Supports borough-specific safety planning and resource allocation.</li>
+          <li>Use alongside the choropleth map and time-based charts for a multi-dimensional analysis.</li>
         </ul>
       </div>
     </div>
+    
 
     <!-- Divider for style -->
     <hr class="reducedOpacity" style="margin: 1.5rem;"/>
@@ -343,7 +274,7 @@
         });
       </script>
 
-      <button id="sVisualizationsButtonBottom">Static Visualizations 🖼️</button>
+      <button id="sVisualizationsButtonBottom">Temporal & Spatial Crime Analysis 📊</button>
       <script>
         sVisualizationsButtonBottom.addEventListener("click", function () {
           window.location.href = "staticVisualizations.html";
@@ -353,15 +284,6 @@
       <a href="#Top">
         <button class="buttonEmphasis">Back to Top ↑</button>
       </a>
-      
-      <!--
-      <button id="iVisualizationsButtonBottom">Interactive Visualizations 👾</button>
-      <script>
-        iVisualizationsButtonBottom.addEventListener("click", function () {
-          window.location.href = "interactiveVisualizations.html";
-        });
-      </script>
-      -->
 
       <button id="summaryButtonBottom">Summary & Findings 🔭</button>
       <script>

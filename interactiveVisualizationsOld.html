@@ -8,7 +8,8 @@
       rel="icon"
       href="https://cdn-icons-png.freepik.com/256/12861/12861836.png?semt=ais_hybrid"
     />
-    <title>Shade or Shady: Temporal & Spatial Crime Analysis</title>
+    <title>Shade or Shady: Interactive Visualizations</title>
+    
   </head>
 
   <body>
@@ -58,24 +59,23 @@
         });
       </script>
 
-      <button id="sVisualizationsButton" class="buttonEmphasis">This is: Temporal & Spatial Crime Analysis 📊</button>
-      <!--
-      
+      <button id="sVisualizationsButton">Temporal & Spatial Crime Analysis 📊</button>
       <script>
         const sVisualizationsButton = document.getElementById("sVisualizationsButton");
         sVisualizationsButton.addEventListener("click", function () {
-          window.location.href = "popularity.html";
+          window.location.href = "staticVisualizations.html";
         });
       </script>
-      -->
 
-      <button id="iVisualizationsButton">Borough-Level Crime Profiling 🚔</button>
+      <button id="iVisualizationsButton" class="buttonEmphasis">This is: Interactive Visualizations 👾</button>
+      <!--
       <script>
         const iVisualizationsButton = document.getElementById("iVisualizationsButton");
         iVisualizationsButton.addEventListener("click", function () {
           window.location.href = "interactiveVisualizations.html";
         });
       </script>
+      -->
 
       <button id="summaryButton">Summary & Findings 🔭</button>
       <script>
@@ -84,18 +84,6 @@
           window.location.href = "summary.html";
         });
       </script>
-    </div>
-
-    <!-- Divider for style -->
-    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
-
-    <div class="grid-container">
-      <h2 style="color: #d1bda6; margin-right: 2rem;" class="columnText">Temporal & Spatial Crime Analysis 📊</h2>
-      <p class="columnText">
-        This section explores how crime in New York City parks has changed over time and across geographic space.
-        Through interactive charts and maps, you can track quarterly crime trends, visualize park-level hotspots, 
-        and examine how specific crime types fluctuate seasonally or cluster in different neighborhoods.
-      </p>
     </div>
     
     <!-- Divider for style -->
@@ -264,9 +252,9 @@
     <!-- Section 3 -->
     <h2 class="secondary" id="Popularity">
       <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">
-        Interactive Geospatial Map
+        Geospatial Map with D3
       </p>
-      3. NYC Park Choropleth Map Colored through Crime Count
+      3. NYC Park Major Crime Heat Map between 2023 & 2024
     </h2>
 
     <iframe 
@@ -285,93 +273,41 @@
     ></iframe>
 
     <div class="grid-container">
-      <!-- Left Column -->
-      <div class="column">
-        <h2 style="color: #d1bda6;" class="columnText">How to Use the Interactive Choropleth Crime Map</h2>
-        <p class="columnText">
-          This interactive map visualizes major crime activity across New York City parks using a choropleth color scale. 
-          Parks are shaded based on the <strong>total number of reported crimes</strong> from <strong>2023 to 2024</strong>, allowing you to quickly identify high- and low-crime areas.
-        </p>
-    
-        <h3 class="columnText">Filter the Map</h3>
-        <ul class="columnText">
-          <li>Use the <strong>dropdown menus</strong> on the left panel to select filters like <em>borough</em>, <em>crime type</em>, <em>year</em>, or <em>category</em>.</li>
-          <li>Click <strong>"Reset Filters"</strong> to return to the full citywide view.</li>
-          <li>Hover over a park to see the <strong>exact crime count</strong> and location.</li>
+      <!-- Left Column: Instructions -->
+      <div style="flex: 1 1 45%; margin-bottom: 2rem;" class="columnText">
+        <h2 style="color: #d1bda6;">How to Use the NYC Park Crime Heatmap</h2>
+        <p>This geospatial heatmap visualizes the total number of crimes reported in New York City public parks. It uses D3.js to map the data geographically, letting you explore spatial crime trends interactively.</p>
+
+        <h3>Explore the Map</h3>
+        <ul>
+          <li>Each park is displayed on a map based on its location, colored by total crime count.</li>
+          <li>Darker shades represent parks with higher crime totals.</li>
+          <li>Parks with low or no reported crimes will appear lighter or faded.</li>
         </ul>
-    
-        <h3 class="columnText">Crime Type Coloring</h3>
-        <ul class="columnText">
-          <li>Parks are shaded from <span style="color:#e07b7b;">light pink</span> (low crime) to <span style="color:#640000;">dark red</span> (high crime).</li>
-          <li>The legend at the bottom right shows crime count ranges (e.g., <em>0–5</em>, <em>10–20</em>, <em>100+</em>).</li>
+
+        <h3>Interact with the Map</h3>
+        <ul>
+          <li>Hover over a park to see a <strong>tooltip</strong> showing its name and total crimes.</li>
+          <li>Click a park (if enabled) to view additional metadata such as borough or crime type breakdown.</li>
         </ul>
       </div>
-    
-      <!-- Right Column -->
-      <div class="column" class="columnText">
-        <h3 class="columnText">What the Map Shows</h3>
-        <ul class="columnText">
-          <li>Each polygon represents an NYC park, shaded by its <strong>total number of reported crimes</strong>.</li>
-          <li>You can explore park-level crime distribution and compare safety between locations.</li>
-          <li>Dark red parks signify hotspots with <strong>high crime volumes</strong> over the two-year period.</li>
-          <li>The map integrates spatial and crime data into a single view for intuitive navigation.</li>
+
+      <!-- Right Column: Chart Details -->
+      <div style="flex: 1 1 45%;">
+        <h3>What the Map Shows</h3>
+        <ul>
+          <li>Geographic distribution of reported crime across NYC parks.</li>
+          <li>Color intensity reflects total crime count (e.g., <em>Flushing Meadows</em> will appear darker).</li>
+          <li>All park polygons are sourced from the official NYC Open Data parks shapefile.</li>
+          <li>Crime data was aggregated from public quarterly NYPD reports (2023–2024).</li>
         </ul>
-    
-        <h3 class="columnText">Explore Further:</h3>
-        <ul class="columnText">
-          <li>Find the most affected parks in each borough.</li>
-          <li>Identify safe zones and under-reported areas.</li>
-          <li>Use in tandem with charts to confirm spatial trends with quantitative data.</li>
-          <li>Great for urban planners, community advocates, and public safety strategists.</li>
+
+        <h3>Learn Yourself:</h3>
+        <ul>
+          <li>Identify spatial <strong>crime clusters</strong> in the city.</li>
+          <li>Compare parks by <strong>relative safety</strong> visually, without reading tables.</li>
+          <li>Explore how crime correlates with park size, location, or borough.</li>
         </ul>
-      </div>
-    </div>
-    
-
-    <!-- Divider for style -->
-    <hr class="reducedOpacity" style="margin: 1.5rem;"/>
-
-    <!-- Section 3: Park Size vs. Crime Count -->
-    <h2 class="secondary" id="Popularity">
-      <p class="columnText" style="letter-spacing: normal; color: #d1bda6;">Scatter Plot</p>
-      4. Park Size vs. Crime Count
-    </h2>
-
-
-    <div class="grid-container">
-      <!-- Column 1 -->
-      <div class="column">
-        <div class="sticky">
-          <p class="columnText">
-            Scatter plot analyzing the relationship between park size (acres) and total crime count.
-            This scatter plot explores whether there’s a correlation between the size of a park and the amount of crime that occurs within it.
-            Each point represents a park, with colors indicating the borough.
-          </p>
-
-          <h3 class="columnText">Analysis Details</h3>
-          <ul class="columnText">
-            <li>The visualization reveals that while there is a general trend of larger parks having more crime incidents, the relationship is not strictly linear.</li>
-            <li>Several outliers show that some large parks have disproportionately high crime counts, while others maintain relatively low numbers despite their size.</li>
-            <li>The clustering of points by borough suggests that location may play a more significant role than size alone in determining crime rates.</li>
-            <li>Smaller parks (under 50 acres) show considerable variance in crime counts, indicating that factors beyond size (such as location, design, and usage patterns) significantly influence safety.</li>
-          </ul>
-
-          <p class="columnText">
-             This analysis helps urban planners understand that size alone is not deterministic of park safety, and that design elements and location context must be considered in security planning.
-          </p>
-
-
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="column">
-        <img
-          src="pc_parksize_vs_crime.png"
-        />
-        <p class="photoCaption">
-          Scatter plot analyzing the relationship between park size (acres) and total crime count.
-        </p>
       </div>
     </div>
 
@@ -407,25 +343,25 @@
         });
       </script>
 
-      <a href="#Top">
-        <button class="buttonEmphasis">Back to Top ↑</button>
-      </a>
-
-      <!--
-      <button id="sVisualizationsButtonBottom">Static Visualizations 🖼️</button>
+      <button id="sVisualizationsButtonBottom">Temporal & Spatial Crime Analysis 📊</button>
       <script>
         sVisualizationsButtonBottom.addEventListener("click", function () {
           window.location.href = "staticVisualizations.html";
         });
       </script>
-      -->
 
-      <button id="iVisualizationsButtonBottom">Borough-Level Crime Profiling 🚔</button>
+      <a href="#Top">
+        <button class="buttonEmphasis">Back to Top ↑</button>
+      </a>
+      
+      <!--
+      <button id="iVisualizationsButtonBottom">Interactive Visualizations 👾</button>
       <script>
         iVisualizationsButtonBottom.addEventListener("click", function () {
           window.location.href = "interactiveVisualizations.html";
         });
       </script>
+      -->
 
       <button id="summaryButtonBottom">Summary & Findings 🔭</button>
       <script>
